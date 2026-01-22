@@ -101,6 +101,7 @@ content:
             - 프레임워크의 유지보수성을 높이기 위해 의존성 분리 등 구조 개선
             - 팀 내 공유를 위한 프레임워크 사용 매뉴얼 작성
             - 콘텐츠 5종의 전반적인 로직·인터랙션·연출 구현
+            <br>
       - layout: top-middle
         title: 셀빅
         # link: https://cellbig.com
