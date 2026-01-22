@@ -53,8 +53,6 @@ content:
     content:
       - layout: top-middle
         title: 셀빅
-        # link: https://cellbig.com
-        # link_text: boringcompany.com
         sub_title: 클라이언트 프로그래머
         caption: 2022.12 ~ 2025.12
         description: | # this will include new lines to allow paragraphs
@@ -101,11 +99,8 @@ content:
             - 프레임워크의 유지보수성을 높이기 위해 의존성 분리 등 구조 개선
             - 팀 내 공유를 위한 프레임워크 사용 매뉴얼 작성
             - 콘텐츠 5종의 전반적인 로직·인터랙션·연출 구현
-            <br>
       - layout: top-middle
         title: 셀빅
-        # link: https://cellbig.com
-        # link_text: boringcompany.com
         sub_title: R&D 프로그래머
         caption: 2019.10 ~ 2022.04
         description: | # this will include new lines to allow paragraphs
