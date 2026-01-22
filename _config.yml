@@ -59,7 +59,6 @@ content:
         caption: 2022.12 ~ 2025.12
         description: | # this will include new lines to allow paragraphs
             <br>
-            <br>
             <font size="4"><b>던파 20주년 페스티벌 판타 드로우잇｜2025.10 ~ 2025.11</b></font>
             *유저가 스케치 및 색칠한 그림을 2D 캐릭터로 생성하고 손으로 터치하여 인터랙션 할 수 있는 실감형 콘텐츠*
             - 자체 개발한 엣지블렌딩 시스템을 적용하여 32:9 해상도 지원
@@ -109,7 +108,7 @@ content:
         sub_title: R&D 프로그래머
         caption: 2019.10 ~ 2022.04
         description: | # this will include new lines to allow paragraphs
-            
+            <br>
 
 # Footer
 footer_show_references: false
