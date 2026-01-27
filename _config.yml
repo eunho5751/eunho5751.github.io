@@ -42,13 +42,13 @@ additional_links:
 # google_analytics: "UA-00000000-0"
 
 # About Section
-# about_title: About Me
+about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   자기소개
 
 content:
-  - title: Experience # Title for the section
+  - title: Work Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout: top-middle
@@ -127,6 +127,18 @@ content:
             - 카메라 제조사별 SDK를 활용하여 카메라 제어를 위한 C++ 라이브러리 개발
             - 카메라 연결 상태 모니터링 및 자동 재연결 기능 구현
             - 웹캠, 키넥트, 머신 비전 카메라 등 다양한 타입의 카메라 구현
+
+content:
+  - title: Other Experience
+    layout: list
+    
+content:
+  - title: Skill
+    layout: list
+    
+content:
+  - title: Education
+    layout: text
 
 # Footer
 footer_show_references: false
