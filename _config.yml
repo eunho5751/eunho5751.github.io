@@ -132,7 +132,9 @@ content:
     layout: list
     
   - title: Skill
-    layout: list
+    layout: text
+    content: |
+        <mark>C#</mark> <mark>C++</mark>
     
   - title: Education
     layout: text
