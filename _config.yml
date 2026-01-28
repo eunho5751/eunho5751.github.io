@@ -55,10 +55,10 @@ content:
   - title: Skill
     layout: text
     content: |
-      - Language : C#, C++
-      - Engine : Unity
-      - Framework / Library : OpenCV
-      - Tool : Git, Redmine
+      - <b>Language</b> : C#, C++
+      - <b>Engine</b> : Unity
+      - <b>Framework</b> / Library : OpenCV
+      - <b>Tool</b> : Git, Redmine
 
   - title: Work Experience # Title for the section
     layout: list # Type of content section (list/text)
