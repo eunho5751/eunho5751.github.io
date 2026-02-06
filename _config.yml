@@ -51,12 +51,12 @@ content:
   - title: Skills
     layout: text
     content: |
-      <font size="4"><b>Languages : </b></font>C#, C++
+      <font size="4"><b>Languages :</b></font> C#, C++
       - Unity를 주로 다루다보니 C#에 대한 이해도가 높음
       - 프로그래밍을 C++로 시작하여 언어에 대한 기본적인 이해와 Unity 플러그인 개발 경험
       <br>
       <br>
-      <font size="4"><b>Engine : </b></font>Unity
+      <font size="4"><b>Engine :</b></font> Unity
       - 엔진 기본 기능에 대한 이해 (Rigidbody, Animator, UGUI 등)
       - UniTask & CancellationToken을 통한 비동기 처리
       - DOTween을 통한 Easing 구현
@@ -69,7 +69,7 @@ content:
       - 네이티브 플러그인 연동 경험
       <br>
       <br>
-      <font size="4"><b>Tools : </b></font>Git(SourceTree, Fork), Redmine, Notion
+      <font size="4"><b>Tools :</b></font> Git(SourceTree, Fork), Redmine, Notion
       <br>
       <font size="4"><b>Etc</b></font>
       - OpenCV를 통한 영상 처리​
