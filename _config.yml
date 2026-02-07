@@ -60,8 +60,8 @@ content:
     layout: text
     content: |
       <font size="3.5"><b>　Languages : C#, C++</b></font>
-      - Unity를 주로 다루다보니 C#에 대한 이해도가 높음
-      - 프로그래밍을 C++로 시작하여 언어에 대한 기본적인 이해와 Unity 플러그인 개발 경험
+      - C# : Unity 개발 주력 언어로 사용해 왔으며, 콘텐츠 로직 및 시스템 구현에 능숙
+      - C++ : 프로그래밍을 C++로 시작하여 언어에 대한 기본적인 이해와 Unity 플러그인 개발 경험
       <br>
       <br>
       <font size="3.5"><b>　Engine : Unity</b></font>
