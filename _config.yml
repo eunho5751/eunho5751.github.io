@@ -59,12 +59,12 @@ content:
   - title: Skills
     layout: text
     content: |
-      <font size="3.5"><b>　Languages : C#, C++</b></font>
+      <font size="4"><b>　Languages : C#, C++</b></font>
       - C# : Unity 개발 주력 언어로 사용해 왔으며, 콘텐츠 로직 및 시스템 구현에 능숙
       - C++ : 프로그래밍을 C++로 시작하여 언어에 대한 기본적인 이해와 Unity 플러그인 개발 경험
       <br>
       <br>
-      <font size="3.5"><b>　Engine : Unity</b></font>
+      <font size="4"><b>　Engine : Unity</b></font>
       - 엔진 기본 기능에 대한 이해 (Rigidbody, Animator, UGUI 등)
       - UniTask & CancellationToken을 통한 비동기 처리
       - DOTween을 통한 Easing 구현
@@ -78,9 +78,9 @@ content:
       - Unity Editor 확장
       <br>
       <br>
-      <font size="3.5"><b>　Tools : Git (SourceTree/Fork), Redmine, Notion</b></font>
+      <font size="4"><b>　Tools : Git (SourceTree/Fork), Redmine, Notion</b></font>
       <br>
-      <font size="3.5"><b>　Etc</b></font>
+      <font size="4"><b>　Etc</b></font>
       - OpenCV를 통한 영상 처리​
 
   - title: Work Experience # Title for the section
