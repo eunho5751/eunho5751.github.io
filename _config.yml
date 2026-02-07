@@ -45,7 +45,20 @@ additional_links:
 about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  자기소개
+  <font size="6"><b>반갑습니다, 저는 최은호입니다.</b></font>
+  
+  6년차 Unity 클라이언트 개발자로서 실감형 콘텐츠를 중심으로 개발해왔으며, 콘텐츠 개발을 지원하기 위한 다양한 시스템 개발 경험을 보유하고 있습니다.
+
+  확장성과 유지보수성을 고려한 아키텍처 설계를 중요하게 생각하며, 변화에 유연하게 대응할 수 있는 구조를 만들기 위해 지속적으로 고민하고 노력하고 있습니다.
+  
+  
+  
+  
+
+
+  
+  
+  
 
 content:
   - title: Skills
@@ -65,8 +78,9 @@ content:
       - Compute Shader를 통한 병렬 처리
       - Addressables을 통한 리소스 관리
       - ScriptableObject를 통한 데이터 관리
+      - HTTP, WebSocket 통신 (UnityWebRequest, Socket.IO)
+      - C++ 네이티브 플러그인 연동
       - Unity Editor 확장
-      - 네이티브 플러그인 연동 경험
       <br>
       <br>
       <font size="3.5"><b>　Tools : Git (SourceTree/Fork), Redmine, Notion</b></font>
@@ -114,7 +128,7 @@ content:
             <br>
             <font size="4"><b>Unity 네이티브 플러그인 개발.</b></font>
             - 카메라 제어를 위해 카메라 SDK를 활용한 C++ 플러그인 개발      
-            - 이미지를 스키닝된 2D 캐릭터로 생성하기 위한 데이터를 생성하는 C++ 플러그인 개발
+            - 그림 이미지를 스키닝된 2D 캐릭터 생성에 필요한 데이터로 변환하는 C++ 플러그인 개발
             - 기존 C#으로 구현된 기능을 C++로 포팅하고 플러그인으로 연동하여 성능 최적화
 
   - title: Other Experience
