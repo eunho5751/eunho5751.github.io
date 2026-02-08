@@ -10,7 +10,12 @@ layout: page
 
   {%- include header.html -%}
 
-  {{ content }}
+  {% for section in site.career %}
+    <div class="container {{ section.layout }}-container">
+      <h3 id="{{ section.title | slugify }}">{{ section.title }}</h3>
+      {% include {{ section.layout | prepend: "section-" | append: ".html" }} content=section.content %}
+    </div>
+  {% endfor %}
 
   {%- include footer.html -%}
   {% if site.darkmode == false %}
