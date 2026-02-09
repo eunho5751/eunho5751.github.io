@@ -32,7 +32,7 @@ github_username:  eunho5751
 # Additional icon links
 additional_links:
   - title: 이력서
-    icon: fa-address-card
+    icon: fab fa-address-card
     url: https://eunho5751.github.io/resume/career/
 
 # Google Analytics and Tag Manager
