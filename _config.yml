@@ -7,7 +7,10 @@ version: 2
 
 # Personal info
 name: 최은호
-title: 게임 클라이언트 프로그래머
+title: |
+  게임 클라이언트 프로그래머
+
+  이력서 경력기술서
 email: eunho5751@naver.com
 website: https://eunho5751.tistory.com
 
@@ -139,7 +142,7 @@ content:
         2016.03 ~ 2019.02 청강문화산업대학교 게임전공 - 프로그래밍
 
 career:
-  - title: 경력 기술서
+  - title: 경력기술서
     layout: list
     content:
       - layout: top-middle
