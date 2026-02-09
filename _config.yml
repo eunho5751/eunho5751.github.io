@@ -200,11 +200,13 @@ career:
         caption: 2019.10 ~ 2022.04
         description: | # this will include new lines to allow paragraphs
             <br>
-            <font size="4"><b>이미지 캐릭터화 플러그인｜2020.06 ~ 2020.08</b></font> <mark>C#</mark> <mark>C++</mark> <mark>Unity</mark> <mark>OpenCV</mark>
+            <font size="4"><b>이미지 캐릭터화 플러그인｜2020.06 ~ 2020.08</b></font>
             *Unity 내 2D 캐릭터 생성을 위해 이미지 내 그려진 캐릭터를 검출하여 메시, 리깅, 스키닝 데이터를 생성하는 C++ 플러그인 개발*
             - OpenCV를 활용하여 캐릭터 검출 알고리즘 구현
             - 캐릭터 데이터 생성을 위해 기존 C#에서 작성된 영상처리 알고리즘을 C++로 포팅하여 성능 개선
             - Windows / Android / iOS 플랫폼별 플러그인 빌드 환경 구축
+
+            <mark>C#</mark> <mark>C++</mark> <mark>Unity</mark> <mark>OpenCV</mark>
             <br>
             <br>
             <font size="4"><b>인터랙션 검출 시스템｜2020.03 ~ 2020.05</b></font>
