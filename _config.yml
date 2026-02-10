@@ -115,7 +115,7 @@ content:
             <br>
             <br>
             
-      - layout: left
+      - layout: top-left
         title: 셀빅
         sub_title: R&D팀, 연구원
         caption: 2019.10 ~ 2022.04
