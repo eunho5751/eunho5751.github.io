@@ -90,7 +90,7 @@ content:
   - title: Work Experience # Title for the section
     layout: list # Type of content section (list/text)
     content:
-      - layout: top-middle
+      - layout: left
         title: 셀빅
         sub_title: 프로그램팀, 대리
         caption: 2022.12 ~ 2025.12
@@ -113,7 +113,7 @@ content:
             - 협업 시 통일성을 유지하기 위해 네이밍 컨벤션 정립
             - 팀 내 전문성 및 협업 역량 강화를 위한 세미나 진행
             
-      - layout: top-middle
+      - layout: left
         title: 셀빅
         sub_title: R&D팀, 연구원
         caption: 2019.10 ~ 2022.04
