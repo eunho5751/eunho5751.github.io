@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import { getCategories, getPosts } from '../../lib';
+
+const posts = await getPosts();
+const categories = await getCategories();
+const counts = new Map<string, number>();
+for (const p of posts) if (p.data.category) counts.set(p.data.category, (counts.get(p.data.category) ?? 0) + 1);
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
+---
+<Base title="Blog" description="개발 기록과 회고">
+  <h1 class="page-title">Blog</h1>
+  <p class="muted">개발하면서 배운 것, 고민한 것, 회고를 적습니다.</p>
+  <CategoryNav categories={categories} counts={counts} total={posts.length} />
+  {tags.length > 0 && (
+    <div class="tag-filter" role="toolbar" aria-label="태그 필터">
+      <button class="active" data-tag="">#전체</button>
+      {tags.map((t) => <button data-tag={t}>#{t}</button>)}
+    </div>
+  )}
+  <PostList posts={posts} />
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.tag-filter button');
+    const items = document.querySelectorAll<HTMLLIElement>('.post-list > li');
+    const apply = (tag: string) => {
+      buttons.forEach((b) => b.classList.toggle('active', b.dataset.tag === tag));
+      items.forEach((li) => {
+        li.hidden = !!tag && !(li.dataset.tags ?? '').split(',').includes(tag);
+      });
+    };
+    buttons.forEach((b) =>
+      b.addEventListener('click', () => {
+        const tag = b.dataset.tag ?? '';
+        history.replaceState(null, '', tag ? `?tag=${encodeURIComponent(tag)}` : location.pathname);
+        apply(tag);
+      }),
+    );
+    apply(new URLSearchParams(location.search).get('tag') ?? '');
+  </script>
+</Base>

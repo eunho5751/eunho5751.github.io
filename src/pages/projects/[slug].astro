@@ -1,0 +1,33 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getProjects } from '../../lib';
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+  return projects.map((p) => ({ params: { slug: p.id }, props: { project: p } }));
+}
+const { project } = Astro.props;
+const d = project.data;
+const { Content } = await render(project);
+---
+<Base title={d.title} description={d.summary}>
+  <article class="prose-wrap">
+    <a href="/projects/" class="back">← Projects</a>
+    <div class="project-hero" style={`--accent:${d.accent}`}>
+      {d.cover ? <img src={d.cover} alt={`${d.title} 스크린샷`} /> : <span>{d.title}</span>}
+    </div>
+    <h1>{d.title}</h1>
+    <p class="lead">{d.summary}</p>
+    <dl class="facts">
+      <div><dt>기간</dt><dd>{d.period}</dd></div>
+      {d.role && <div><dt>역할</dt><dd>{d.role}</dd></div>}
+      {d.platform && <div><dt>플랫폼</dt><dd>{d.platform}</dd></div>}
+      <div><dt>스택</dt><dd><ul class="chips">{d.stack.map((s) => <li>{s}</li>)}</ul></dd></div>
+    </dl>
+    {d.links.length > 0 && (
+      <div class="cta">{d.links.map((l) => <a class="btn" href={l.url} target="_blank" rel="noopener">{l.label}</a>)}</div>
+    )}
+    <div class="prose"><Content /></div>
+  </article>
+</Base>

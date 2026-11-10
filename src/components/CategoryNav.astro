@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  categories: CollectionEntry<'categories'>[];
+  counts: Map<string, number>;
+  total: number;
+  current?: string;
+}
+const { categories, counts, total, current } = Astro.props;
+---
+<nav class="category-nav" aria-label="카테고리">
+  <a href="/blog/" class:list={{ active: !current }}>전체 <span>{total}</span></a>
+  {categories.map((c) => (
+    <a href={`/blog/category/${c.id}/`} class:list={{ active: current === c.id }}>
+      {c.data.name} <span>{counts.get(c.id) ?? 0}</span>
+    </a>
+  ))}
+</nav>

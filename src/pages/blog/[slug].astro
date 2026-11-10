@@ -1,0 +1,49 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { getCategoryNames, getPosts } from '../../lib';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((p, i) => ({
+    params: { slug: p.id },
+    props: { post: p, newer: posts[i - 1], older: posts[i + 1] },
+  }));
+}
+const { post, newer, older } = Astro.props;
+const { Content, headings } = await render(post);
+const fmt = (d: Date) => d.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+const toc = headings.filter((h) => h.depth <= 3);
+const categoryName = post.data.category && (await getCategoryNames()).get(post.data.category);
+---
+<Base title={post.data.title} description={post.data.description}>
+  <article class="prose-wrap">
+    <a href="/blog/" class="back">← Blog</a>
+    {post.data.banner && (
+      <img class="post-banner" src={post.data.banner} alt={post.data.bannerAlt ?? ''} />
+    )}
+    {categoryName && (
+      <a class="category-label" href={`/blog/category/${post.data.category}/`}>{categoryName}</a>
+    )}
+    <h1>{post.data.title}</h1>
+    <div class="post-meta">
+      <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+      {post.data.updated && <span>· 수정 {fmt(post.data.updated)}</span>}
+      {post.data.draft && <span class="draft">DRAFT</span>}
+    </div>
+    {post.data.tags.length > 0 && (
+      <ul class="chips small">{post.data.tags.map((t) => <li><a href={`/blog/?tag=${encodeURIComponent(t)}`}>#{t}</a></li>)}</ul>
+    )}
+    {toc.length > 2 && (
+      <details class="toc" open>
+        <summary>목차</summary>
+        <ul>{toc.map((h) => <li class={`d${h.depth}`}><a href={`#${h.slug}`}>{h.text}</a></li>)}</ul>
+      </details>
+    )}
+    <div class="prose"><Content /></div>
+    <nav class="post-nav">
+      {older ? <a href={`/blog/${older.id}/`}><small>이전 글</small>{older.data.title}</a> : <span />}
+      {newer ? <a href={`/blog/${newer.id}/`} class="right"><small>다음 글</small>{newer.data.title}</a> : <span />}
+    </nav>
+  </article>
+</Base>

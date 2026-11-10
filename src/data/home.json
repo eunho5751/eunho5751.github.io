@@ -1,0 +1,14 @@
+{
+  "eyebrow": "Unity Game Developer",
+  "heading": "안녕하세요, [Eunho]입니다.",
+  "lead": "Unity로 게임을 만들고, 만드는 과정을 기록합니다.\n오래 고쳐 쓸 수 있는 게임 코드와, 손맛 좋은 게임플레이에 관심이 많습니다.",
+  "image": "",
+  "buttons": [
+    { "label": "프로젝트 보기", "url": "/projects/", "primary": true },
+    { "label": "GitHub", "url": "https://github.com/eunho5751", "primary": false }
+  ],
+  "projectsTitle": "Projects",
+  "projectCount": 4,
+  "postsTitle": "Recent Posts",
+  "postCount": 5
+}

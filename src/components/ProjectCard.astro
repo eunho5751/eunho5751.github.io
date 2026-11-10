@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+const d = project.data;
+---
+<a href={`/projects/${project.id}/`} class="card project-card" style={`--accent:${d.accent}`}>
+  <div class="project-banner">
+    {d.cover ? <img src={d.cover} alt="" loading="lazy" /> : <span>{d.title}</span>}
+  </div>
+  <div class="card-body">
+    <div class="meta">{d.period}{d.platform && ` · ${d.platform}`}</div>
+    <h3>{d.title}</h3>
+    <p>{d.summary}</p>
+    <ul class="chips">{d.stack.slice(0, 5).map((s) => <li>{s}</li>)}</ul>
+  </div>
+</a>

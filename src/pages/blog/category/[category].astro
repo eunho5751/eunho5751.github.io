@@ -1,0 +1,23 @@
+---
+import Base from '../../../layouts/Base.astro';
+import PostList from '../../../components/PostList.astro';
+import CategoryNav from '../../../components/CategoryNav.astro';
+import { getCategories, getPosts } from '../../../lib';
+
+export async function getStaticPaths() {
+  const categories = await getCategories();
+  return categories.map((c) => ({ params: { category: c.id }, props: { category: c } }));
+}
+const { category } = Astro.props;
+const all = await getPosts();
+const categories = await getCategories();
+const counts = new Map<string, number>();
+for (const p of all) if (p.data.category) counts.set(p.data.category, (counts.get(p.data.category) ?? 0) + 1);
+const posts = all.filter((p) => p.data.category === category.id);
+---
+<Base title={category.data.name} description={category.data.description}>
+  <h1 class="page-title">{category.data.name}</h1>
+  {category.data.description && <p class="muted">{category.data.description}</p>}
+  <CategoryNav categories={categories} counts={counts} total={all.length} current={category.id} />
+  {posts.length ? <PostList posts={posts} /> : <p class="muted">이 카테고리에는 아직 글이 없습니다.</p>}
+</Base>

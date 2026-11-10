@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCategoryNames } from '../lib';
+interface Props { posts: CollectionEntry<'posts'>[] }
+const { posts } = Astro.props;
+const categoryNames = await getCategoryNames();
+const fmt = (d: Date) => d.toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' });
+---
+<ul class="post-list">
+  {posts.map((p) => {
+    const category = p.data.category && categoryNames.get(p.data.category);
+    return (
+      <li data-tags={p.data.tags.join(',')}>
+        <a href={`/blog/${p.id}/`} class:list={{ 'has-thumb': p.data.banner }}>
+          <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+          <div>
+            {category && <span class="category-label">{category}</span>}
+            <h3>{p.data.title}{p.data.draft && <span class="draft">DRAFT</span>}</h3>
+            <p>{p.data.description}</p>
+            {p.data.tags.length > 0 && <ul class="chips small">{p.data.tags.map((t) => <li>#{t}</li>)}</ul>}
+          </div>
+          {p.data.banner && <img class="thumb" src={p.data.banner} alt="" loading="lazy" />}
+        </a>
+      </li>
+    );
+  })}
+</ul>
